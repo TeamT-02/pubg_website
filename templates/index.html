@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <main class="main--area">
+        <!-- slider-area -->
+        <section class="slider__area slider__bg" data-background="assets/img/slider/slider_bg.jpg">
+            <div class="slider-activee">
+                <div class="single-slider">
+                    <div class="container custom-container">
+                        <div class="row justify-content-between">
+                            <div class="col-lg-6">
+                                <div class="slider__content">
+                                    <h6 class="sub-title wow fadeInUp" data-wow-delay=".2s">live gaming</h6>
+                                    <h2 class="title wow fadeInUp" data-wow-delay=".5s">steaming</h2>
+                                    <p class="wow fadeInUp" data-wow-delay=".8s">video games online</p>
+                                    <div class="slider__btn wow fadeInUp" data-wow-delay="1.2s">
+                                        <a href="contact.html" class="tg-btn-1"><span>contact us</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-5 col-lg-6">
+                                <div class="slider__img text-center">
+                                    <img style="border-radius: 8rem;" src="{% static 'photo_2023-05-28_17-00-09.png' %}"
+                                         data-magnetic alt="img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__shapes">
+                <img src="{% static 'img/slider/slider_shape01.png' %}" alt="shape">
+                <img src="{% static 'img/slider/slider_shape02.png' %}" alt="shape">
+                <img src="{% static 'img/slider/slider_shape03.png' %}" alt="shape">
+                <img src="{% static 'img/slider/slider_shape04.png' %}" alt="shape">
+            </div>
+            <div class="slider__brand-wrap">
+                <div class="container custom-container">
+                    <ul class="slider__brand-list list-wrap">
+                        {% for i in brand_img %}
+                            <li><a class="mt-5" style="height: 8rem;width: 11rem;" href="{{ i.brand_link }}"><img
+                                    src="{{ i.brand_img }}" alt="brand"></a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- slider-area-end -->
+
+
+        <!-- area-background-start -->
+        <div class="area-background" data-background="assets/img/bg/area_bg01.jpg">
+
+            <!-- about-area -->
+            <section class="about__area section-pt-130 section-pb-130">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-7 col-md-10">
+                            <div class="section__title text-center mb-60">
+                                <span class="sub-title tg__animate-text">know about us</span>
+                                <h3 class="title">top rated steamers</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane show active" id="about01" role="tabpanel" aria-labelledby="about01-tab">
+                            {% for i in know_about %}
+                                <div class="row justify-content-center">
+                                    <div class="col-xl-5 col-lg-10">
+                                        <div class="about__img">
+                                            <img src="{{ i.img.url }}" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-7 col-lg-10">
+                                        <div class="about__flex-wrap">
+                                            <div class="about__content-wrap">
+                                                <div class="about__content">
+                                                    <h4 class="title">human game</h4>
+                                                    <span class="rate">rate 50%</span>
+                                                    <p>{{ i.text }}</p>
+                                                </div>
+                                                <div class="about__content-list">
+                                                    <ul class="list-wrap">
+                                                        <li><img src="assets/img/icons/features_icon01.png" alt="img">
+                                                            Chichi Dragon Ball
+                                                        </li>
+                                                        <li><img src="assets/img/icons/features_icon02.png" alt="img">
+                                                            Space Babe Night
+                                                        </li>
+                                                        <li><img src="assets/img/icons/features_icon03.png" alt="img">
+                                                            Dragon Ball
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="about__btn-wrap">
+                                                <ul class="list-wrap">
+                                                    <li><a href="shop-details.html">Dragon Ball</a></li>
+                                                    <li><a href="shop.html">nft market</a></li>
+                                                    <li><a href="contact-2.html">support</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- about-area-end -->
+
+            <!-- gallery-area -->
+            <section class="gallery__area fix section-pb-130">
+                <div class="gallery__slider">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-9 col-lg-10 col-md-11">
+                                <div class="swiper-container gallery-active">
+                                    <div class="swiper-wrapper">
+                                        {% for i in images %}
+                                            <div class="swiper-slide">
+                                                <div class="gallery__item">
+                                                    <div class="gallery__thumb">
+                                                        <a href="{{ i.images.url }}" data-cursor="-theme"
+                                                           data-cursor-text="View <br> Image" class="popup-image"
+                                                           title="PUBG Tournament"><img style="height: 36rem"
+                                                                                        src="{{ i.images.url }}"
+                                                                                        alt="img"></a>
+                                                    </div>
+                                                    <div class="gallery__content">
+                                                        <h3 class="title">pubg tournament</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    <!-- scrollbar -->
+                                    <div class="swiper-scrollbar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- gallery-area-end -->
+
+        </div>
+        <!-- area-background-end -->
+
+        <!-- team-area -->
+        <section class="team__area team-bg section-pt-130 section-pb-100" data-background="assets/img/bg/team_bg.jpg">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-lg-7 col-md-10">
+                        <div class="section__title text-center mb-60">
+                            <span class="sub-title tg__animate-text">our team member</span>
+                            <h3 class="title">ACTIVE TEAM MEMBERS</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    {% for i in team %}
+                        <div class="col-xl-3 col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+                            <div class="team__item">
+                                <div class="team__thumb">
+                                    <a href="team-details.html"><img src="{{ i.img.url }}" alt="img"></a>
+                                </div>
+                                <div class="team__content">
+                                    <h4 class="name"><a
+                                            href="team-details.html">{{ i.first_name }}&nbsp;{{ i.last_name }}</a></h4>
+                                    <span class="designation">{{ i.nick_name }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- team-area-end -->
+
+        <!-- video-area -->
+        <section class="video__area video-bg tg-jarallax" data-background="assets/img/bg/video_bg.jpg">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-lg-8 col-md-11">
+                        <div class="video__content text-center">
+                            {% for i in home_video %}
+                                <a href="{{ i.video_link }}" class="popup-video"><i class="flaticon-play"></i></a>
+                                <h2 class="title">{{ i.title|slice:'0:8' }}<span>&nbsp;{{ i.title|slice:'9:100' }}</span>
+                                </h2>
+                                <p>Join our Discord community and choosec onsteur</p>
+                                <a href="https://discord.com/" target="_blank" class="video__btn tg-btn-1"><span>join discord</span></a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- video-area-end -->
+
+        <!-- roadMap-area -->
+        <section class="roadMap__area roadMap-bg section-pt-150 section-pb-150"
+                 data-background="assets/img/bg/roadmap_bg.jpg">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
+                        <div class="roadMap__inner">
+                            <div class="row">
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="roadMap__content">
+                                        <h2 class="title">a look into roadmaps seasons</h2>
+                                        <p>With Season 1 Ending with our play and Duis elementum sollicitudin is yaugue
+                                            euismods Nulla ulla Player-focused updates games from Mobile App and
+                                            Enjoy.</p>
+                                        <a href="contact.html" class="tg-btn-1 -btn-yellow"><span>roadmap</span></a>
+                                    </div>
+                                    <div class="roadMap__img">
+                                        <img src="assets/img/others/roadmap.png" class="tg-parallax" data-scale="1.5"
+                                             data-orientation="down" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-xl-7 col-lg-6">
+                                    <div class="roadMap__steps-wrap">
+                                        {% for o in home_seasons %}
+                                            <div class="roadMap__steps-item active">
+                                                <h3 class="title">{{ o.title }}</h3>
+                                                <ul class="roadMap__list list-wrap">
+                                                    {% for i in home_seasons_step %}
+                                                        <li class="{{ i.color }} tg__animate-text style2">{{ i.name }}
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                                <img src="assets/img/others/roadmap_img.png" alt="img"
+                                                     class="roadMap__steps-img">
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- roadMap-area-end -->
+
+
+    </main>
+{% endblock %}
